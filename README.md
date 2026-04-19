@@ -1,47 +1,108 @@
-# Pokédex Angular
+# Pokedex Angular - Despliegue en Azure Static Web Apps
 
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
-[![codecov](https://codecov.io/gh/keilermora/pokedex-angular/branch/master/graph/badge.svg?token=9E0D28IOFT)](https://codecov.io/gh/keilermora/pokedex-angular)
-[![Security Headers](https://img.shields.io/badge/Security%20Headers-A%2B-brightgreen)](https://securityheaders.com/?q=https://black-mushroom-07502f110.7.azurestaticapps.net/)
+## Descripción del Proyecto
 
-**Producción:** [https://black-mushroom-07502f110.7.azurestaticapps.net/](https://black-mushroom-07502f110.7.azurestaticapps.net/)
+Este proyecto consiste en el despliegue de una aplicación web llamada **Pokedex**, desarrollada en **Angular**, la cual permite visualizar información de diferentes Pokémon consumiendo datos desde una API externa.
 
-La aplicación muestra el listado y el detalle de los Pokémon de las primeras 3 generaciones.
+El objetivo principal fue desplegar la aplicación en la nube utilizando **Azure Static Web Apps**, aplicar buenas prácticas de seguridad web y documentar el proceso completo.
 
-La imagen que representa un Pokémon en el listado muestra las variaciones que estos tuvieron durante las primeras versiones, desde la versión Green (1996) hasta la versión Emerald (2005).
+---
 
-Los detalles de un Pokémon individual muestra sus estadísticas base y los registros de la Pokédex de las diferentes versiones.
+## Creación de Cuenta en Azure
 
-El proyecto fue desarrollado usando [Angular](https://angular.io/) para la interfaz de usuario, en comunicación con la API GraphQL de [PokéAPI](https://pokeapi.co/).
+Para realizar el despliegue se utilizó el portal de Microsoft Azure.
 
-## Requisitos mínimos
+Pasos realizados:
 
-- [Node.js](https://nodejs.org) LTS
-- Un navegador web
+1. Se accedió al portal de Azure mediante la dirección:
 
-## Desarrollo local
+https://portal.azure.com
 
-```bash
-npm install
-npm start       # http://localhost:4200
-npm test        # Ejecutar pruebas unitarias
-npm run lint    # Verificar estilo de código
-```
+2. Se inició sesión con una cuenta Microsoft.
+3. Se verificó que la suscripción estuviera activa.
+4. Se ingresó al servicio **Static Web Apps** desde el buscador del portal.
 
-## Despliegue
+---
 
-La aplicación está desplegada en **Azure Static Web Apps** con CI/CD automático via GitHub Actions. Cada push a `main` genera un nuevo despliegue.
+## Repositorio Utilizado
 
-Los encabezados HTTP de seguridad están configurados en `staticwebapp.config.json`, logrando una calificación **A+** en [securityheaders.com](https://securityheaders.com/).
+Se utilizó un repositorio en GitHub con el siguiente enlace:
 
-Para más detalles del proceso de despliegue, ver [DESPLIEGUE.md](DESPLIEGUE.md).
+https://github.com/mateosanchezh/pokedex
 
-## Tecnologías
+Este repositorio contiene el código fuente completo de la aplicación desarrollada en Angular.
 
-- [Angular](https://angular.io/) — Framework principal
-- [Apollo Client](https://www.apollographql.com/docs/angular/) — Cliente GraphQL
-- [PokéAPI](https://pokeapi.co/) — Fuente de datos
-- [Azure Static Web Apps](https://azure.microsoft.com/es-es/products/app-service/static) — Hosting en la nube
-- [GitHub Actions](https://github.com/features/actions) — CI/CD
-- [Font Awesome](https://fontawesome.com/) — Iconos
-- [Normalize.css](https://necolas.github.io/normalize.css/) — Reset de estilos
+---
+
+## Objetivo del Despliegue
+
+Los objetivos principales fueron:
+
+- Publicar la aplicación en una URL pública.
+- Implementar integración continua (CI/CD).
+- Aplicar encabezados HTTP de seguridad.
+- Verificar el nivel de seguridad del sitio web.
+
+---
+
+## Seguridad Implementada
+
+Se configuraron encabezados HTTP de seguridad mediante el archivo:
+
+staticwebapp.config.json
+
+Los encabezados implementados fueron:
+
+- Content-Security-Policy
+- Strict-Transport-Security
+- X-Content-Type-Options
+- X-Frame-Options
+- Referrer-Policy
+- Permissions-Policy
+
+Estos encabezados permitieron mejorar la seguridad del sitio web.
+
+---
+
+## URL Pública de la Aplicación
+
+La aplicación desplegada se encuentra disponible en:
+
+https://black-mushroom-07502f110.7.azurestaticapps.net/
+
+---
+
+## Resultado del Escaneo de Seguridad
+
+Se realizó un análisis de seguridad utilizando la herramienta:
+
+https://securityheaders.com/
+
+Resultado obtenido:
+
+A+
+
+Esto indica que los encabezados de seguridad fueron configurados correctamente.
+
+---
+
+## Tecnologías Utilizadas
+
+Las tecnologías utilizadas en el proyecto fueron:
+
+- Angular
+- TypeScript
+- HTML
+- CSS
+- Azure Static Web Apps
+- GitHub
+- GitHub Actions
+- SecurityHeaders
+
+---
+
+## Conclusión
+
+Durante este laboratorio se aprendió el proceso completo de despliegue de aplicaciones web en la nube utilizando Azure Static Web Apps, incluyendo la implementación de seguridad mediante encabezados HTTP.
+
+Se logró publicar la aplicación correctamente, automatizar el despliegue y obtener una calificación A+ en seguridad web.
